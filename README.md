@@ -1,5 +1,5 @@
 # Django Experiment 
-This is a simple web application required to get performance results for an experiment conducted for a research purposes. 
+This is a simple web application developed by Django that follows the MVC architecture. It is required to get performance results for an experiment conducted for a research purposes. 
 
 ## Technologies used 
 1. Python 
