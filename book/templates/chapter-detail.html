@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block header %}
+<div class="row">
+    <div class="col-6">
+        <h3>Chapter {{chapter.chapterNum}} Details</h3>
+    </div>
+</div>
+<hr>
+{% endblock %}
+{% block body %}
+    <div class="row">
+        <div class="col-1">Ch# {{chapter.chapterNum}}</div><div class="col-4">Chapter Title: {{chapter.name}}</div>
+    </div>
+        <p>Page Number: {{chapter.pageNum}}</p>
+        <p>{{ chapter.description }}</p>
+
+    <a href="{% url 'book:update_chapter' chapter.id %}">Edit</a> 
+    <a href="{% url 'book:delete_chapter' chapter.id %}">Delete</a>
+
+{% endblock %}

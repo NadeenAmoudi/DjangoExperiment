@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block header %}
+<div class="row">
+    <div class="col-6">
+        <h3>Experimentation in Software Engineering</h3>
+    </div>
+    <div class="col-2">
+        <a href="{% url 'book:create_chapter' %}">Add New Chapter</a>
+    </div>
+</div>
+<hr>
+{% endblock %}
+
+{% block body %}   
+    {% for chapter in chapters %}
+        <div class="row">
+            <div class="col-1">Ch# {{chapter.chapterNum}}: </div> 
+            <div><b>{{chapter.name}}</b></div>
+        </div>
+            <div>Page Number: {{chapter.pageNum}}</div>
+            <div> Details: {{chapter.description}}</div>
+        <div class="row">
+            <div class="col-1"><a href="{% url 'book:update_chapter' chapter.id %}">Edit</a></div>
+            <a href="{% url 'book:delete_chapter' chapter.id %}">Delete</a>
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}

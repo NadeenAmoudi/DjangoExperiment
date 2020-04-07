@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block header %}
+<div class="row">
+    <div class="col-6">
+        <h3>Delete a Chapter</h3>
+    </div>
+</div>
+<hr>
+{% endblock %}
+
+{% block body %}
+    <form method="POST">
+        {% csrf_token %}
+        <p>Are you sure you want to delete chapter #{{chapter.chapterNum}} - {{chapter.name}}?</p>
+        <button type="submit">Yes</button>
+        <a href="{% url 'book:chapters_list' %}">Cancel</a>
+    </form>
+{% endblock %}
