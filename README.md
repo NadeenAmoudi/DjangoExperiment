@@ -21,6 +21,8 @@ This is a simple web application required to get performance results for an expe
 3. `pip install Django==2.2` to install Django in your virtual environment.
 
 ###### Then navigate to the project folder and run the following command:
-`python manage.py runserver`
+1. `python manage.py makemigrations`
+2. `python manage.py migrate`
+3. `python manage.py runserver`
 
 Now the project is running in your local host [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
